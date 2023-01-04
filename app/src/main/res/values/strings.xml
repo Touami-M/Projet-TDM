@@ -1,3 +1,25 @@
 <resources>
     <string name="app_name">RENTGO</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_home">Choose your favorite car, \nrent it and enjoy the experience</string>
+    <string name="find_your_car">Find your car</string>
+
+    <string-array name="marque">
+        <item>Maruti Alto</item>
+        <item>Maruti Alto</item>
+        <item>Maruti Alto</item>
+        <item>Maruti Alto</item>
+        <item>Maruti Alto</item>
+    </string-array>
+
+    <string-array name="price">
+        <item>4000DA</item>
+        <item>4000DA</item>
+        <item>4000DA</item>
+        <item>4000DA</item>
+        <item>4000DA</item>
+    </string-array>
+
+
 </resources>

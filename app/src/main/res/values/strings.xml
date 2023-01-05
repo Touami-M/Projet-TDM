@@ -21,5 +21,12 @@
         <item>4000DA</item>
     </string-array>
 
+    <string-array name="brandsNames">
+        <item>Mercedes</item>
+        <item>Audi</item>
+        <item>BMW</item>
+        <item>Renault</item>
+        <item>Peugeot</item>
+    </string-array>
 
 </resources>

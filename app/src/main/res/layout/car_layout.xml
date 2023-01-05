@@ -2,10 +2,11 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/save_icon"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginBottom="10dp"
-    android:background="@color/grey">
+    android:background="@drawable/layout_bg">
 
     <ImageView
         android:id="@+id/carImage"
@@ -79,4 +80,14 @@
         app:layout_constraintStart_toEndOf="@+id/carImage"
         app:layout_constraintTop_toBottomOf="@+id/price"
         app:srcCompat="@drawable/available_true" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="18dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/save_icon" />
 </androidx.constraintlayout.widget.ConstraintLayout>

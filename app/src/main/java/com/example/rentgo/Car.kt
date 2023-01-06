@@ -9,4 +9,5 @@ data class Car(
     var availability: Boolean,
     /*var latitude:Double,
     var longitude:Double,*/
+    var detail:String = ""
 ): Serializable {}

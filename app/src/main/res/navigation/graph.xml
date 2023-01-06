@@ -9,5 +9,18 @@
         android:id="@+id/homeFragment"
         android:name="com.example.rentgo.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_carDetailsFragment"
+            app:destination="@id/carDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/carDetailsFragment"
+        android:name="com.example.rentgo.CarDetailsFragment"
+        android:label="fragment_car_details"
+        tools:layout="@layout/fragment_car_details" >
+        <action
+            android:id="@+id/action_carDetailsFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
 </navigation>

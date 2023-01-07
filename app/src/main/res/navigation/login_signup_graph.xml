@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/login_signup_graph"
+    app:startDestination="@id/loginFrag">
+
+    <fragment
+        android:id="@+id/loginFrag"
+        android:name="com.example.rentgo.LoginFrag"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFrag_to_signupFrag"
+            app:destination="@id/signupFrag" />
+    </fragment>
+    <fragment
+        android:id="@+id/signupFrag"
+        android:name="com.example.rentgo.SignupFrag"
+        android:label="fragment_signup"
+        tools:layout="@layout/fragment_signup" >
+        <action
+            android:id="@+id/action_signupFrag_to_loginFrag"
+            app:destination="@id/loginFrag" />
+    </fragment>
+</navigation>

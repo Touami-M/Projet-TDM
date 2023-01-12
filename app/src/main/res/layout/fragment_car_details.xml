@@ -45,7 +45,7 @@
                     android:id="@+id/backButtonView"
                     android:layout_width="48dp"
                     android:layout_height="50dp"
-                    android:layout_marginLeft="20dp"
+                    android:layout_marginStart="20dp"
                     android:layout_marginTop="20dp"
                     android:background="@null"
                     android:contentDescription="back button"
@@ -97,6 +97,7 @@
                 android:layout_height="21dp"
                 android:layout_marginStart="25dp"
                 android:layout_marginTop="10dp"
+                android:contentDescription="marque image"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/marque"
                 app:srcCompat="@drawable/available_true" />
@@ -107,6 +108,7 @@
                 android:layout_height="50dp"
                 android:layout_marginTop="25dp"
                 android:layout_marginEnd="25dp"
+                android:contentDescription="save icon"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/save_icon" />
@@ -167,4 +169,49 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+       >
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/backgroung_grey2"
+            android:elevation="10dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="0dp">
+
+                <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+                    android:id="@+id/extended_fab"
+                    style="@style/Theme.RENTGO"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|end"
+                    android:layout_margin="16dp"
+                    android:contentDescription="@string/rent_now"
+                    android:text="@string/rent_now"
+                    android:textAlignment="center"
+                    android:textAppearance="@style/Theme.RENTGO"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    app:backgroundTint="@color/blue"
+                    app:icon="@null"
+                    app:shapeAppearanceOverlay="@style/Theme.RENTGO"
+                    tools:ignore="RtlCompat" />
+
+                <TextView
+                    android:id="@+id/priceView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="25dp"
+                    android:fontFamily="@font/inter_bold"
+                    android:gravity="center"
+                    android:text="Price"
+                    android:textColor="@color/black"
+                    android:textSize="22sp" />
+
+            </androidx.coordinatorlayout.widget.CoordinatorLayout>
+    </RelativeLayout>
 </FrameLayout>

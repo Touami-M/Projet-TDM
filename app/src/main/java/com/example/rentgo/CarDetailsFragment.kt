@@ -51,6 +51,7 @@ class CarDetailsFragment : Fragment() {
                 else {
                     availability.text = "Not Available"
                 }
+                priceView.text = car.price+"/Day"
             }
         }
         sliderView = binding.slider
@@ -69,6 +70,10 @@ class CarDetailsFragment : Fragment() {
 
         binding.backButtonView.setOnClickListener { view: View ->
             view.findNavController().navigate(com.example.rentgo.R.id.action_carDetailsFragment_to_homeFragment)
+        }
+
+        binding.extendedFab.setOnClickListener {
+            // Respond to Extended FAB click
         }
     }
 

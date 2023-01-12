@@ -17,9 +17,9 @@ class LoginSignUpActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.login_signup_activity)
-        val navHostFragment = supportFragmentManager. findFragmentById(R.id.navHost) as NavHostFragment
+        /*val navHostFragment = supportFragmentManager. findFragmentById(R.id.navHost) as NavHostFragment
         navController = navHostFragment.navController
-        setupActionBarWithNavController(navController)
+        setupActionBarWithNavController(navController)*/
 
     }
 }

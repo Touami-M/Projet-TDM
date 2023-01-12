@@ -1,13 +1,15 @@
 package com.example.rentgo
 
 import android.os.Bundle
+import android.text.method.HideReturnsTransformationMethod
+import android.text.method.PasswordTransformationMethod
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
+import android.widget.EditText
+import android.widget.ImageView
 import androidx.navigation.findNavController
-import com.example.rentgo.databinding.FragmentLoginBinding
 import com.example.rentgo.databinding.FragmentSignupBinding
 
 
@@ -33,6 +35,25 @@ class SignupFrag : Fragment() {
         }
 
 
+
+        view.findViewById<ImageView>(R.id.eyesignup).setOnClickListener{
+
+            val eye = view.findViewById<View>(R.id.eyesignup)
+            val pwd = view.findViewById<EditText>(R.id.passwdsignup)
+
+            if(eye.equals(R.drawable.password_eye))
+            {
+                eye.setBackgroundResource(R.drawable.eye_off)
+                pwd.transformationMethod = HideReturnsTransformationMethod.getInstance()
+            }
+            else
+            {
+                eye.setBackgroundResource(R.drawable.password_eye)
+                pwd.transformationMethod = PasswordTransformationMethod.getInstance()
+            }
+
+
+        }
 
     }
 

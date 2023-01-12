@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.ImageView
+import android.widget.Toast
 import androidx.navigation.findNavController
 import com.example.rentgo.databinding.FragmentSignupBinding
 
@@ -36,20 +37,24 @@ class SignupFrag : Fragment() {
 
 
 
-        view.findViewById<ImageView>(R.id.eyesignup).setOnClickListener{
+        var cpt = 0
+        binding.eyesignup.setOnClickListener{
 
-            val eye = view.findViewById<View>(R.id.eyesignup)
-            val pwd = view.findViewById<EditText>(R.id.passwdsignup)
+            //val eye = view.findViewById<View>(R.id.eyelogin)
+            //val pwd = view.findViewById<EditText>(R.id.passwd)
 
-            if(eye.equals(R.drawable.password_eye))
+
+            if(cpt==0)
             {
-                eye.setBackgroundResource(R.drawable.eye_off)
-                pwd.transformationMethod = HideReturnsTransformationMethod.getInstance()
+                cpt = 1
+                binding.eyesignup.setBackgroundResource(R.drawable.eye_off)
+                binding.passwdsignup.transformationMethod = HideReturnsTransformationMethod.getInstance()
             }
             else
             {
-                eye.setBackgroundResource(R.drawable.password_eye)
-                pwd.transformationMethod = PasswordTransformationMethod.getInstance()
+                cpt = 0
+                binding.eyesignup.setBackgroundResource(R.drawable.password_eye)
+                binding.passwdsignup.transformationMethod = PasswordTransformationMethod.getInstance()
             }
 
 

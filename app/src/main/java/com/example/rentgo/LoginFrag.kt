@@ -11,6 +11,7 @@ import android.widget.EditText
 import androidx.navigation.findNavController
 import com.example.rentgo.databinding.FragmentLoginBinding
 import android.text.method.PasswordTransformationMethod
+import android.widget.Toast
 
 class LoginFrag : Fragment() {
 
@@ -27,6 +28,8 @@ class LoginFrag : Fragment() {
         return view
     }
 
+    @Suppress("DEPRECATION")
+    @SuppressLint("UseCompatLoadingForDrawables")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -34,21 +37,24 @@ class LoginFrag : Fragment() {
             view?.findNavController()?.navigate(R.id.action_loginFrag_to_signupFrag)
         }
 
+        var cpt = 0
+        binding.eyelogin.setOnClickListener{
 
-        view.findViewById<View>(R.id.eyelogin).setOnClickListener{
+            //val eye = view.findViewById<View>(R.id.eyelogin)
+            //val pwd = view.findViewById<EditText>(R.id.passwd)
 
-            val eye = view.findViewById<View>(R.id.eyelogin)
-            val pwd = view.findViewById<EditText>(R.id.passwd)
 
-            if(eye.equals(R.drawable.password_eye))
+            if(cpt==0)
             {
-                eye.setBackgroundResource(R.drawable.eye_off)
-                pwd.transformationMethod = HideReturnsTransformationMethod.getInstance()
+                cpt = 1
+                binding.eyelogin.setBackgroundResource(R.drawable.eye_off)
+                binding.passwd.transformationMethod = HideReturnsTransformationMethod.getInstance()
             }
             else
             {
-                eye.setBackgroundResource(R.drawable.password_eye)
-                pwd.transformationMethod = PasswordTransformationMethod.getInstance()
+                cpt = 0
+                binding.eyelogin.setBackgroundResource(R.drawable.password_eye)
+                binding.passwd.transformationMethod = PasswordTransformationMethod.getInstance()
             }
 
 

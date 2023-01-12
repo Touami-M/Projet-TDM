@@ -11,6 +11,7 @@ import androidx.navigation.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.rentgo.databinding.FragmentCarDetailsBinding
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.gtappdevelopers.kotlingfgproject.SliderAdapter
 import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType
 import com.smarteist.autoimageslider.SliderAnimations
@@ -75,6 +76,7 @@ class CarDetailsFragment : Fragment() {
         binding.extendedFab.setOnClickListener {
             // Respond to Extended FAB click
         }
+
     }
 
 }

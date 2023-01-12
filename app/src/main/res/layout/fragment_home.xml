@@ -97,7 +97,7 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/carsRecycleView"
             android:layout_width="360dp"
-            android:layout_height="419dp"
+            android:layout_height="400dp"
             android:layout_marginStart="25dp"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="25dp"
@@ -105,22 +105,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
-        <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:id="@+id/nav_bottom"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:background="?android:attr/windowBackground"
-            app:backgroundTint="@color/backgroung_grey2"
-            app:elevation="8dp"
-            app:itemIconTint="@color/bottom_nav_color"
-            app:itemTextAppearanceActive="@style/Widget.BottomNavigationViewActive"
-            app:itemTextAppearanceInactive="@style/Widget.BottomNavigationViewInactive"
-            app:itemTextColor="@color/bottom_nav_color"
-            app:labelVisibilityMode="labeled"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:menu="@menu/bottom_menu" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

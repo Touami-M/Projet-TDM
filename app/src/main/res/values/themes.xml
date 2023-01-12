@@ -8,6 +8,7 @@
         <!--this attribute is to change the theme of the extended FAB-->
         <item name="extendedFloatingActionButtonStyle">@style/Widget.App.ExtendedFloatingActionButton</item>
 
+>>>>>>> master
     </style>
 
     <style name="Widget.App.ExtendedFloatingActionButton" parent="Widget.MaterialComponents.ExtendedFloatingActionButton">

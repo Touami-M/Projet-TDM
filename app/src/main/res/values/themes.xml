@@ -1,16 +1,51 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <!-- Base application theme. -->
-    <style name="Theme.RENTGO" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    <style name="Theme.RENTGO" parent="Theme.MaterialComponents">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_500</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorPrimary">@color/blue</item>
+        <item name="colorPrimaryVariant">@color/black</item>
         <item name="colorOnPrimary">@color/white</item>
-        <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/teal_200</item>
-        <item name="colorSecondaryVariant">@color/teal_700</item>
-        <item name="colorOnSecondary">@color/black</item>
-        <!-- Status bar color. -->
-        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
-        <!-- Customize your theme here. -->
+        <!--this attribute is to change the theme of the extended FAB-->
+        <item name="extendedFloatingActionButtonStyle">@style/Widget.App.ExtendedFloatingActionButton</item>
+
     </style>
+
+    <style name="Widget.App.ExtendedFloatingActionButton" parent="Widget.MaterialComponents.ExtendedFloatingActionButton">
+
+        <item name="materialThemeOverlay">@style/myCustomThemeForExtendedFab</item>
+
+        <item name="shapeAppearanceOverlay">@style/customExtendedFAB</item>
+
+    </style>
+
+    <style name="customExtendedFAB">
+
+        <!--for the extended FAB the cornerFamily is given the value as the rounded-->
+        <item name="cornerFamily">rounded</item>
+
+        <!--and the cornerSize makes the cut for all 4 corners of the FAB as 10dp-->
+        <item name="cornerSize">20dp</item>
+
+    </style>
+
+    <style name="myCustomThemeForExtendedFab" parent="">
+
+        <!--this attribute gives makes the change in the background of the FAB-->
+        <item name="colorSecondary">@color/blue</item>
+
+        <!--this attribute gives makes the change in the text and icon color of the FAB-->
+        <item name="colorOnSecondary">@color/white</item>
+
+    </style>
+
+    <style name="Widget.BottomNavigationViewActive"
+        parent="Widget.Design.BottomNavigationView">
+        <item name="fontFamily">@font/inter_bold</item>
+    </style>
+
+    <style name="Widget.BottomNavigationViewInactive"
+        parent="Widget.Design.BottomNavigationView">
+        <item name="fontFamily">@font/inter_medium</item>
+    </style>
+
 </resources>

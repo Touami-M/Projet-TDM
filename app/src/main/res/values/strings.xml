@@ -1,3 +1,57 @@
 <resources>
     <string name="app_name">RENTGO</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_home">Choose your favorite car, \nrent it and enjoy the experience</string>
+    <string name="find_your_car">Find your car</string>
+    <string name="rent_now">RENT NOW</string>
+
+    <string-array name="marque">
+        <item>Clio 4</item>
+        <item>Maruti Alto</item>
+        <item>Maruti Alto</item>
+        <item>Maruti Alto</item>
+        <item>Maruti Alto</item>
+    </string-array>
+
+    <string-array name="price">
+        <item>4000DA</item>
+        <item>4000DA</item>
+        <item>4000DA</item>
+        <item>4000DA</item>
+        <item>4000DA</item>
+    </string-array>
+
+    <string-array name="detailsCars">
+        <item>Lorem ipsum dolor sit amet consectetur. Luctus enim vitae purus egestas velit at integer. Viverra lobortis et et aliquam purus porttitor tortor sagittis. Duis scelerisque scelerisque pellentesque imperdiet. Lectus aenean sapien velit dictum netus id ultrices. Ac leo non magna praesent accumsan pulvinar turpis erat in.</item>
+        <item>Lorem ipsum dolor sit amet consectetur. Luctus enim vitae purus egestas velit at integer. Viverra lobortis et et aliquam purus porttitor tortor sagittis. Duis scelerisque scelerisque pellentesque imperdiet. Lectus aenean sapien velit dictum netus id ultrices. Ac leo non magna praesent accumsan pulvinar turpis erat in.</item>
+        <item>Lorem ipsum dolor sit amet consectetur. Luctus enim vitae purus egestas velit at integer. Viverra lobortis et et aliquam purus porttitor tortor sagittis. Duis scelerisque scelerisque pellentesque imperdiet. Lectus aenean sapien velit dictum netus id ultrices. Ac leo non magna praesent accumsan pulvinar turpis erat in.</item>
+        <item>Lorem ipsum dolor sit amet consectetur. Luctus enim vitae purus egestas velit at integer. Viverra lobortis et et aliquam purus porttitor tortor sagittis. Duis scelerisque scelerisque pellentesque imperdiet. Lectus aenean sapien velit dictum netus id ultrices. Ac leo non magna praesent accumsan pulvinar turpis erat in.</item>
+        <item>Lorem ipsum dolor sit amet consectetur. Luctus enim vitae purus egestas velit at integer. Viverra lobortis et et aliquam purus porttitor tortor sagittis. Duis scelerisque scelerisque pellentesque imperdiet. Lectus aenean sapien velit dictum netus id ultrices. Ac leo non magna praesent accumsan pulvinar turpis erat in.</item>
+    </string-array>
+
+    <string-array name="brandsNames">
+        <item>Mercedes</item>
+        <item>Audi</item>
+        <item>BMW</item>
+        <item>Renault</item>
+        <item>Peugeot</item>
+    </string-array>
+
+    <string-array name="specififcationsNames">
+        <item>Speed</item>
+        <item>Seats</item>
+        <item>Color</item>
+        <item>Motor</item>
+    </string-array>
+
+    <string-array name="specififcationsValues">
+        <item>180 Km/h</item>
+        <item>4 seaters</item>
+        <item>brick red</item>
+        <item>V2 - Diesel</item>
+    </string-array>
+
+
+
 </resources>

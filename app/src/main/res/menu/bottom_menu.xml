@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item
+        android:id="@+id/mainFragment"
+        android:enabled="true"
+        android:icon="@drawable/ic_round_home"
+        android:title="Home"
+        android:visible="true" />
+
+    <item
+        android:id="@+id/mainFragment"
+        android:enabled="true"
+        android:icon="@drawable/ic_save"
+        android:title="Saved"
+        android:visible="true"
+        tools:ignore="DuplicateIds" />
+
+    <item
+        android:id="@+id/mainFragment"
+        android:enabled="true"
+        android:icon="@drawable/ic_rents"
+        android:title="Rents"
+        android:visible="true"
+        tools:ignore="DuplicateIds" />
+
+    <item
+        android:id="@+id/mainFragment"
+        android:enabled="true"
+        android:icon="@drawable/ic_user_profile"
+        android:title="Profile"
+        android:visible="true"
+        tools:ignore="DuplicateIds" />
+</menu>

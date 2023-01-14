@@ -1,5 +1,6 @@
 package com.example.rentgo
 
+import android.content.Intent
 import android.os.Bundle
 import android.text.method.HideReturnsTransformationMethod
 import android.text.method.PasswordTransformationMethod
@@ -58,6 +59,11 @@ class SignupFrag : Fragment() {
             }
 
 
+        }
+
+        binding.button2.setOnClickListener {
+            val intent = Intent(requireActivity(), MainActivity::class.java)
+            startActivity(intent)
         }
 
     }

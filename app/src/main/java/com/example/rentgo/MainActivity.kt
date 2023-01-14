@@ -38,12 +38,16 @@ class MainActivity : AppCompatActivity() {
                     loadFragment(HomeFragment())
                     true
                 }
-                R.id.home_fragment -> {
-                    loadFragment(HomeFragment())
+                R.id.savedFragment -> {
+                    loadFragment(SavedFragment())
                     true
                 }
-                R.id.home_fragment -> {
-                    loadFragment(HomeFragment())
+                R.id.rentsFragment -> {
+                    loadFragment(RentsFragment())
+                    true
+                }
+                R.id.profileFragment -> {
+                    loadFragment(ProfileFragment())
                     true
                 }
                 else -> {

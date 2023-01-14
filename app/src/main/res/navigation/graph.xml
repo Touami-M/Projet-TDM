@@ -23,4 +23,19 @@
             android:id="@+id/action_carDetailsFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/savedFragment"
+        android:name="com.example.rentgo.SavedFragment"
+        android:label="fragment_saved"
+        tools:layout="@layout/fragment_saved" />
+    <fragment
+        android:id="@+id/rentsFragment2"
+        android:name="com.example.rentgo.RentsFragment"
+        android:label="fragment_rents"
+        tools:layout="@layout/fragment_rents" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.rentgo.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
 </navigation>

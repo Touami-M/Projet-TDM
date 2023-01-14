@@ -12,7 +12,7 @@ class CarModel(application: Application) : AndroidViewModel(application) {
     fun loadData():List<Car> {
         val marquesTab = context.resources.getStringArray(R.array.marque)
         val pricesTab = context.resources.getStringArray(R.array.price)
-        val imagesTab = arrayOf(R.drawable.car_image,R.drawable.car_image,R.drawable.car_image,R.drawable.car_image,R.drawable.car_image)
+        val imagesTab = arrayOf(R.drawable.car_image,R.drawable.car_image,R.drawable.car_image,R.drawable.car_image,R.drawable.car_image,R.drawable.car_image)
         val detailsTab = context.resources.getStringArray(R.array.detailsCars)
         val list = mutableListOf<Car>()
         for (i in imagesTab.indices) {

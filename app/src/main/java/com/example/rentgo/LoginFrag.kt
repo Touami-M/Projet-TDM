@@ -1,17 +1,16 @@
 package com.example.rentgo
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.text.method.HideReturnsTransformationMethod
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.EditText
 import androidx.navigation.findNavController
 import com.example.rentgo.databinding.FragmentLoginBinding
 import android.text.method.PasswordTransformationMethod
-import android.widget.Toast
 
 class LoginFrag : Fragment() {
 
@@ -21,11 +20,10 @@ class LoginFrag : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
         binding = FragmentLoginBinding.inflate(inflater, container, false)
-        val view = binding.root
-        return view
+        return binding.root
     }
 
     @Suppress("DEPRECATION")
@@ -34,7 +32,7 @@ class LoginFrag : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         view.findViewById<View>(R.id.textView12).setOnClickListener{
-            view?.findNavController()?.navigate(R.id.action_loginFrag_to_signupFrag)
+            view.findNavController().navigate(R.id.action_loginFrag_to_signupFrag)
         }
 
         var cpt = 0
@@ -58,6 +56,11 @@ class LoginFrag : Fragment() {
             }
 
 
+        }
+
+        binding.button2.setOnClickListener {
+            val intent = Intent(requireActivity(), MainActivity::class.java)
+            startActivity(intent)
         }
 
 

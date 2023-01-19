@@ -30,6 +30,7 @@ class CarAdapter(val context: Context, var cars:List<Car>):
                 availability.text = "Not Available"
             }
         }
+
         holder.itemView.setOnClickListener { view: View ->
             val data = bundleOf("position" to position)
             view.findNavController().navigate(R.id.action_homeFragment_to_carDetailsFragment,data)

@@ -1,25 +1,24 @@
 package com.example.rentgo
 
-import android.R
 import android.os.Bundle
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.rentgo.databinding.FragmentCarDetailsBinding
-import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.example.rentgo.databinding.FragmentRentDetailsBinding
 import com.gtappdevelopers.kotlingfgproject.SliderAdapter
 import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType
 import com.smarteist.autoimageslider.SliderAnimations
 import com.smarteist.autoimageslider.SliderView
 
 
-class CarDetailsFragment : Fragment() {
-    lateinit var binding: FragmentCarDetailsBinding
+class RentDetailsFragment : Fragment() {
+    lateinit var binding: FragmentRentDetailsBinding
     lateinit var sliderView: SliderView
     lateinit var carModel:CarModel
     lateinit var specificationModel:SpecificationModel
@@ -29,7 +28,7 @@ class CarDetailsFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentCarDetailsBinding.inflate(inflater, container, false)
+        binding = FragmentRentDetailsBinding.inflate(inflater, container, false)
         val view = binding.root
         return view
     }
@@ -46,13 +45,6 @@ class CarDetailsFragment : Fragment() {
             )
             binding.apply {
                 marque.text = car.marque
-                detailsView.text = car.detail
-                if(car.availability)
-                    availability.text = "Available"
-                else {
-                    availability.text = "Not Available"
-                }
-                totalPriceView.text = car.price+"/Day"
             }
         }
         sliderView = binding.slider
@@ -63,20 +55,9 @@ class CarDetailsFragment : Fragment() {
         sliderView.setSliderTransformAnimation(SliderAnimations.DEPTHTRANSFORMATION)
         sliderView.startAutoCycle()
 
-        specificationModel = ViewModelProvider(requireActivity()).get(SpecificationModel::class.java)
-        binding.specificationRecycleView.layoutManager = GridLayoutManager(requireActivity(),2)
-        binding.specificationRecycleView.adapter = SpecificationAdapter(requireActivity(),specificationModel.specifications)
-        val itemDecor = DividerItemDecoration(requireActivity(),1)
-        binding.specificationRecycleView.addItemDecoration(itemDecor)
-
         binding.backButtonView.setOnClickListener { view: View ->
-            view.findNavController().navigate(com.example.rentgo.R.id.action_carDetailsFragment_to_homeFragment)
-        }
-
-        binding.extendedFab.setOnClickListener {
-            // Respond to Extended FAB click
+            view.findNavController().navigate(R.id.action_rentDetailsFragment_to_rentsFragment)
         }
 
     }
-
 }

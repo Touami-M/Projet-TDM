@@ -29,13 +29,26 @@
         android:label="fragment_saved"
         tools:layout="@layout/fragment_saved" />
     <fragment
-        android:id="@+id/rentsFragment2"
+        android:id="@+id/rentsFragment"
         android:name="com.example.rentgo.RentsFragment"
         android:label="fragment_rents"
-        tools:layout="@layout/fragment_rents" />
+        tools:layout="@layout/fragment_rents" >
+        <action
+            android:id="@+id/action_rentsFragment_to_rentDetailsFragment"
+            app:destination="@id/rentDetailsFragment" />
+    </fragment>
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.example.rentgo.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/rentDetailsFragment"
+        android:name="com.example.rentgo.RentDetailsFragment"
+        android:label="fragment_rent_details"
+        tools:layout="@layout/fragment_rent_details" >
+        <action
+            android:id="@+id/action_rentDetailsFragment_to_rentsFragment"
+            app:destination="@id/rentsFragment" />
+    </fragment>
 </navigation>

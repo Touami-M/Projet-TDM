@@ -116,7 +116,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textPassword3"
+            app:layout_constraintTop_toBottomOf="@+id/textPhoneNumber"
             tools:ignore="UseCompatTextViewDrawableXml" />
 
         <TextView
@@ -133,7 +133,7 @@
             android:gravity="center|start"
             android:minHeight="48dp"
             android:paddingStart="10dp"
-            android:text="Driven License Document"
+            android:text="Driver's License Document"
             android:textColor="@color/grey"
             android:textColorHint="@color/grey"
             android:textSize="20sp"
@@ -144,7 +144,7 @@
             tools:ignore="UseCompatTextViewDrawableXml" />
 
         <TextView
-            android:id="@+id/textPassword3"
+            android:id="@+id/textPhoneNumber"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
@@ -188,6 +188,7 @@
             android:backgroundTint="@color/backgroung_grey2"
             android:elevation="0dp"
             android:fontFamily="@font/inter_bold"
+            android:padding="5dp"
             android:text="Logout"
             android:textColor="@android:color/holo_red_light"
             android:textSize="15sp"

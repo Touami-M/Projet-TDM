@@ -61,7 +61,7 @@
             tools:ignore="TextContrastCheck" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/carsRecycleView"
+            android:id="@+id/rentsRecycleView"
             android:layout_width="360dp"
             android:layout_height="600dp"
             android:layout_marginStart="25dp"

@@ -13,7 +13,7 @@ import com.example.rentgo.databinding.FragmentRentsBinding
 
 class RentsFragment : Fragment() {
     lateinit var binding: FragmentRentsBinding
-    lateinit var carModel: CarModel
+    lateinit var rentModel: RentModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -28,10 +28,10 @@ class RentsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        carModel = ViewModelProvider(requireActivity()).get(CarModel::class.java)
-        binding.carsRecycleView.layoutManager = GridLayoutManager(requireActivity(),resources.getInteger(R.integer.nbcol))
-        binding.carsRecycleView.adapter = CarAdapter(requireActivity(),carModel.cars)
+        rentModel = ViewModelProvider(requireActivity()).get(RentModel::class.java)
+        binding.rentsRecycleView.layoutManager = GridLayoutManager(requireActivity(),resources.getInteger(R.integer.nbcol))
+        binding.rentsRecycleView.adapter = RentAdapter(requireActivity(),rentModel.rents)
         val itemDecor = DividerItemDecoration(requireActivity(),1)
-        binding.carsRecycleView.addItemDecoration(itemDecor)
+        binding.rentsRecycleView.addItemDecoration(itemDecor)
     }
 }

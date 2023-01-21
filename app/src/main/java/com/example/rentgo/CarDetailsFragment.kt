@@ -8,10 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
-import androidx.recyclerview.widget.DividerItemDecoration
-import androidx.recyclerview.widget.GridLayoutManager
 import com.example.rentgo.databinding.FragmentCarDetailsBinding
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.gtappdevelopers.kotlingfgproject.SliderAdapter
 import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType
 import com.smarteist.autoimageslider.SliderAnimations
@@ -22,7 +19,6 @@ class CarDetailsFragment : Fragment() {
     lateinit var binding: FragmentCarDetailsBinding
     lateinit var sliderView: SliderView
     lateinit var carModel:CarModel
-    lateinit var specificationModel:SpecificationModel
     lateinit var images: Array<Int>
 
     override fun onCreateView(
@@ -52,7 +48,7 @@ class CarDetailsFragment : Fragment() {
                 else {
                     availability.text = "Not Available"
                 }
-                totalPriceView.text = car.price+"/Day"
+                priceView.text = car.price+"/Day"
             }
         }
         sliderView = binding.slider
@@ -63,18 +59,13 @@ class CarDetailsFragment : Fragment() {
         sliderView.setSliderTransformAnimation(SliderAnimations.DEPTHTRANSFORMATION)
         sliderView.startAutoCycle()
 
-        specificationModel = ViewModelProvider(requireActivity()).get(SpecificationModel::class.java)
-        binding.specificationRecycleView.layoutManager = GridLayoutManager(requireActivity(),2)
-        binding.specificationRecycleView.adapter = SpecificationAdapter(requireActivity(),specificationModel.specifications)
-        val itemDecor = DividerItemDecoration(requireActivity(),1)
-        binding.specificationRecycleView.addItemDecoration(itemDecor)
 
         binding.backButtonView.setOnClickListener { view: View ->
             view.findNavController().navigate(com.example.rentgo.R.id.action_carDetailsFragment_to_homeFragment)
         }
 
-        binding.extendedFab.setOnClickListener {
-            // Respond to Extended FAB click
+        binding.extendedFab.setOnClickListener { view: View ->
+            view.findNavController().navigate((com.example.rentgo.R.id.action_carDetailsFragment_to_bookingFragment))
         }
 
     }

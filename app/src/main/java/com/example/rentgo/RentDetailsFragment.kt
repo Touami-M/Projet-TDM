@@ -7,9 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
-import androidx.recyclerview.widget.DividerItemDecoration
-import androidx.recyclerview.widget.GridLayoutManager
-import com.example.rentgo.databinding.FragmentCarDetailsBinding
 import com.example.rentgo.databinding.FragmentRentDetailsBinding
 import com.gtappdevelopers.kotlingfgproject.SliderAdapter
 import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType
@@ -20,8 +17,7 @@ import com.smarteist.autoimageslider.SliderView
 class RentDetailsFragment : Fragment() {
     lateinit var binding: FragmentRentDetailsBinding
     lateinit var sliderView: SliderView
-    lateinit var carModel:CarModel
-    lateinit var specificationModel:SpecificationModel
+    lateinit var rentModel:RentModel
     lateinit var images: Array<Int>
 
     override fun onCreateView(
@@ -36,17 +32,23 @@ class RentDetailsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        carModel = ViewModelProvider(requireActivity()).get(CarModel::class.java)
+        rentModel = ViewModelProvider(requireActivity()).get(RentModel::class.java)
         val position = arguments?.getInt("position")
         if (position != null) {
-            val car = carModel.cars.get(position)
+            val rent = rentModel.rents.get(position)
             images = arrayOf(
-                car.carImage,car.carImage,car.carImage,car.carImage,car.carImage,
+                rent.photo1,rent.photo2,rent.photo3,
             )
             binding.apply {
-                marque.text = car.marque
+                marque.text = rent.marque + rent.model
+                startTimetextView.text = rent.dateres
+                endTimetextView.text = rent.dateret
+                costView.text = rent.cost.toString()
+                codePinView.text = rent.code_pin.toString()
             }
         }
+
+
         sliderView = binding.slider
         val sliderAdapter = SliderAdapter(images)
 

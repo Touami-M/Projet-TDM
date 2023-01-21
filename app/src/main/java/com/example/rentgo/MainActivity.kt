@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
+        this.binding = ActivityMainBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
         val navHostFragment = supportFragmentManager. findFragmentById(R.id.navHost) as NavHostFragment
@@ -25,14 +25,14 @@ class MainActivity : AppCompatActivity() {
         NavigationUI.setupWithNavController(binding.navBottom,navController)
 
         navController.addOnDestinationChangedListener { _, nd: NavDestination, _ ->
-            if (nd.id == R.id.carDetailsFragment) {
+            if (nd.id == R.id.carDetailsFragment  || nd.id == R.id.bookingFragment || nd.id == R.id.rentDetailsFragment) {
                 binding.navBottom.visibility = View.GONE
             } else {
                 binding.navBottom.visibility = View.VISIBLE
             }
         }
 
-        binding.navBottom.setOnItemSelectedListener {
+        /*binding.navBottom.setOnItemSelectedListener {
             when (it.itemId) {
                 R.id.home_fragment -> {
                     loadFragment(HomeFragment())
@@ -55,12 +55,12 @@ class MainActivity : AppCompatActivity() {
                     true
                 }
             }
-        }
+        }*/
     }
-    private  fun loadFragment(fragment: Fragment){
+    /*private  fun loadFragment(fragment: Fragment){
         val transaction = supportFragmentManager.beginTransaction()
         transaction.replace(R.id.home_fragment,fragment)
         transaction.commit()
-    }
+    }*/
 
 }

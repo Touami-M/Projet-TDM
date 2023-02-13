@@ -27,7 +27,7 @@
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="15dp"
             android:fontFamily="@font/inter_bold"
             android:text="Register"
             android:textColor="@color/black"
@@ -41,7 +41,7 @@
             android:id="@+id/textView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:fontFamily="@font/inter_regular"
             android:text="Create your own RENTGO account to start now!"
             android:textColor="@color/black"
@@ -56,7 +56,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="10dp"
             android:fontFamily="@font/inter_regular"
             android:text="Phone Number"
             android:textColor="@color/black"
@@ -69,7 +69,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="28dp"
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="10dp"
             android:fontFamily="@font/inter_regular"
             android:text="Credit Card"
             android:textColor="@color/black"
@@ -82,32 +82,32 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="28dp"
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="10dp"
             android:fontFamily="@font/inter_regular"
             android:text="Driving License Picture"
             android:textColor="@color/black"
             android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextCreditCard" />
+            app:layout_constraintTop_toBottomOf="@+id/name" />
 
         <TextView
             android:id="@+id/textView10"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="28dp"
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="10dp"
             android:fontFamily="@font/inter_regular"
             android:text="Password"
             android:textColor="@color/black"
             android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+            app:layout_constraintTop_toBottomOf="@+id/uploadimageView" />
 
         <TextView
             android:id="@+id/textView11"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:layout_marginEnd="35dp"
             android:layout_marginBottom="30dp"
             android:fontFamily="@font/inter_regular"
@@ -124,7 +124,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:clickable="true"
             android:fontFamily="@font/inter_bold"
             android:text="Sign in"
@@ -134,6 +134,40 @@
             app:layout_constraintStart_toEndOf="@+id/textView11"
             app:layout_constraintTop_toBottomOf="@+id/button2"
             tools:ignore="TouchTargetSizeCheck" />
+
+        <TextView
+            android:id="@+id/nametextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/inter_regular"
+            android:text="Full name"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextCreditCard" />
+
+        <EditText
+            android:id="@+id/name"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="30dp"
+            android:background="@drawable/layout_bg"
+            android:ems="10"
+            android:hint="First Last name"
+            android:inputType="text"
+            android:minHeight="48dp"
+            android:paddingLeft="20dp"
+            android:textAlignment="viewStart"
+            android:textColor="@color/black"
+            android:textColorHint="#CACACA"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/nametextView" />
 
         <EditText
             android:id="@+id/editTextPhone"
@@ -145,7 +179,7 @@
             android:background="@drawable/layout_bg"
             android:ems="10"
             android:hint="0556710011"
-            android:inputType="phone"
+            android:inputType="number"
             android:minHeight="48dp"
             android:paddingLeft="20dp"
             android:textAlignment="viewStart"
@@ -197,52 +231,48 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView10" />
 
-        <ImageView
-            android:id="@+id/imageView3"
-            android:layout_width="0dp"
-            android:layout_height="48dp"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="30dp"
-            android:background="@drawable/layout_bg"
-            android:src="@drawable/textbox_border"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView6" />
-
-        <ImageView
-            android:id="@+id/imageView4"
+        <!--<ImageView
+            android:id="@+id/uploadimageView"
             android:layout_width="40dp"
             android:layout_height="47dp"
-            android:layout_marginStart="10dp"
             android:clickable="true"
             android:minWidth="48dp"
             android:minHeight="48dp"
             android:scaleX="0.7"
             android:scaleY="0.7"
             android:src="@drawable/plus_icon"
-            app:layout_constraintBottom_toBottomOf="@+id/imageView3"
-            app:layout_constraintStart_toStartOf="@+id/imageView3"
-            app:layout_constraintTop_toTopOf="@+id/imageView3"
-            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck"
+            tools:layout_editor_absoluteX="40dp"
+            tools:layout_editor_absoluteY="455dp" />-->
 
         <TextView
-            android:id="@+id/textView8"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="15dp"
+            android:id="@+id/uploadimageView"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="30dp"
+            android:background="@drawable/layout_bg"
+            android:drawableLeft="@drawable/plus_icon"
+            android:gravity="center"
             android:hint="Upload your document"
+            android:minHeight="48dp"
+            android:paddingStart="20dp"
+            android:textAlignment="center"
+            android:textColor="@color/grey"
+            android:textColorHint="@color/grey"
             android:textSize="16sp"
-            app:layout_constraintBottom_toBottomOf="@+id/imageView3"
-            app:layout_constraintStart_toEndOf="@+id/imageView4"
-            app:layout_constraintTop_toTopOf="@+id/imageView3" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
         <Button
             android:id="@+id/button2"
             android:layout_width="0dp"
             android:layout_height="60dp"
             android:layout_marginStart="30dp"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="20dp"
             android:layout_marginEnd="30dp"
             android:backgroundTint="@color/blue"
             android:fontFamily="@font/inter_bold"
@@ -268,6 +298,28 @@
             app:layout_constraintTop_toTopOf="@+id/passwdsignup"
             app:srcCompat="@drawable/password_eye"
             tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:progressTint="@color/blue"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:srcCompat="@tools:sample/avatars" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

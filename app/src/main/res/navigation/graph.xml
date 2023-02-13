@@ -55,9 +55,7 @@
         tools:layout="@layout/fragment_rents" >
         <action
             android:id="@+id/action_rentsFragment_to_rentDetailsFragment"
-            app:destination="@id/rentDetailsFragment"
-            app:popUpTo="@id/rentsFragment"
-            app:popUpToInclusive="true" />
+            app:destination="@id/rentDetailsFragment" />
     </fragment>
     <fragment
         android:id="@+id/rentDetailsFragment"

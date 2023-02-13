@@ -5,9 +5,11 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.core.os.bundleOf
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.rentgo.databinding.CarLayoutBinding
 
 class CarAdapter(val context: Context, var cars:List<Car>):
@@ -21,14 +23,16 @@ class CarAdapter(val context: Context, var cars:List<Car>):
 
 
         holder.binding.apply {
-            carImage.setImageResource(cars.get(position).carImage)
-            marque.text = cars[position].marque
-            price.setText(cars[position].price)
-            if(cars[position].availability)
+            //carImage.setImageResource(cars.get(position).photo_list)
+            Glide.with(context).load(url+cars[position].photo_list).into(carImage)
+            marque.text = cars[position].marque + cars[position].model
+            price.setText(cars[position].prix)
+            if(cars[position].dispo==1)
                 availability.text = "Available"
             else {
                 availability.text = "Not Available"
             }
+
         }
 
         holder.itemView.setOnClickListener { view: View ->

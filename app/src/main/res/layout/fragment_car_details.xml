@@ -129,7 +129,7 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/cardView1"
                 android:layout_width="160dp"
-                android:layout_height="50dp"
+                android:layout_height="60dp"
                 android:layout_marginStart="25dp"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/layout_bg"
@@ -179,7 +179,7 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/cardView2"
                 android:layout_width="160dp"
-                android:layout_height="50dp"
+                android:layout_height="60dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="25dp"
                 android:background="@drawable/layout_bg"
@@ -229,7 +229,7 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/cardView5"
                 android:layout_width="160dp"
-                android:layout_height="50dp"
+                android:layout_height="60dp"
                 android:layout_marginStart="25dp"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/layout_bg"
@@ -279,7 +279,7 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/cardView6"
                 android:layout_width="160dp"
-                android:layout_height="50dp"
+                android:layout_height="60dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="25dp"
                 android:background="@drawable/layout_bg"
@@ -329,7 +329,7 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/cardView3"
                 android:layout_width="160dp"
-                android:layout_height="50dp"
+                android:layout_height="60dp"
                 android:layout_marginStart="25dp"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/layout_bg"
@@ -379,7 +379,7 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/cardView4"
                 android:layout_width="160dp"
-                android:layout_height="50dp"
+                android:layout_height="60dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="25dp"
                 android:background="@drawable/layout_bg"
@@ -446,7 +446,7 @@
                 android:layout_marginLeft="25dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="25dp"
-                android:layout_marginBottom="80dp"
+                android:layout_marginBottom="100dp"
                 android:paddingStart="25dp"
                 android:paddingEnd="10dp"
                 android:text="TextView"

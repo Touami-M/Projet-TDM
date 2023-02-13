@@ -8,9 +8,6 @@ import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import com.example.rentgo.databinding.FragmentRentDetailsBinding
-import com.gtappdevelopers.kotlingfgproject.SliderAdapter
-import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType
-import com.smarteist.autoimageslider.SliderAnimations
 import com.smarteist.autoimageslider.SliderView
 
 
@@ -49,13 +46,13 @@ class RentDetailsFragment : Fragment() {
         }
 
 
-        sliderView = binding.slider
+        /*sliderView = binding.slider
         val sliderAdapter = SliderAdapter(images)
 
         sliderView.setSliderAdapter(sliderAdapter)
         sliderView.setIndicatorAnimation(IndicatorAnimationType.WORM)
         sliderView.setSliderTransformAnimation(SliderAnimations.DEPTHTRANSFORMATION)
-        sliderView.startAutoCycle()
+        sliderView.startAutoCycle()*/
 
         binding.backButtonView.setOnClickListener { view: View ->
             view.findNavController().navigate(R.id.action_rentDetailsFragment_to_rentsFragment)

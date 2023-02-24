@@ -1,20 +1,24 @@
 package com.example.rentgo
 
+import android.content.Context
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.example.rentgo.databinding.FragmentSavedBinding
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class SavedFragment : Fragment() {
     lateinit var binding: FragmentSavedBinding
-    lateinit var carModel: CarModel
+    lateinit var savedModel: SavedModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -29,10 +33,38 @@ class SavedFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        carModel = ViewModelProvider(requireActivity()).get(CarModel::class.java)
-        binding.carsRecycleView.layoutManager = GridLayoutManager(requireActivity(),resources.getInteger(R.integer.nbcol))
-        binding.carsRecycleView.adapter = CarAdapter(requireActivity(),carModel.cars)
-        val itemDecor = DividerItemDecoration(requireActivity(),1)
-        binding.carsRecycleView.addItemDecoration(itemDecor)
+        savedModel = ViewModelProvider(requireActivity()).get(SavedModel::class.java)
+        binding.progressBar.visibility = View.VISIBLE
+        getSaved()
+    }
+
+    private fun getSaved() {
+        CoroutineScope(Dispatchers.IO).launch {
+            val pref = requireActivity().getSharedPreferences("users", Context.MODE_PRIVATE)
+            val data: HashMap<String, Int> = HashMap()
+            pref.getInt("idUser", 0)?.let { data.put("iduser", it) }
+            val response =  RetrofitService.endpoint.getSaved(data)
+            withContext(Dispatchers.Main) {
+                binding.progressBar.visibility = View.INVISIBLE
+                if(response.isSuccessful) {
+                    val saved = response.body()
+                    if(saved!=null) {
+                        savedModel.savedcars = saved
+                        binding.carsRecycleView.layoutManager = GridLayoutManager(requireActivity(),resources.getInteger(R.integer.nbcol))
+                        binding.carsRecycleView.adapter = SavedAdapter(requireActivity(),savedModel.savedcars)
+                        val itemDecor = DividerItemDecoration(requireActivity(),1)
+                        binding.carsRecycleView.addItemDecoration(itemDecor)
+                    }
+                    else{
+                        binding.noSavedTextvie.visibility = View.VISIBLE
+                    }
+                }
+                else {
+                    Toast.makeText(requireActivity(),"Une erreur s'est produite", Toast.LENGTH_SHORT).show()
+                }
+
+            }
+
+        }
     }
 }

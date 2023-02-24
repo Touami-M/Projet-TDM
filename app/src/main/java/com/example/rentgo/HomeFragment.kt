@@ -1,11 +1,11 @@
 package com.example.rentgo
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.GridLayoutManager
@@ -43,17 +43,11 @@ class HomeFragment : Fragment(){
         binding.carsRecycleView.addItemDecoration(itemDecor1)
 
         carModel = ViewModelProvider(requireActivity()).get(CarModel::class.java)
-        if(carModel.cars.isEmpty()) {
-            binding.progressBar.visibility = View.VISIBLE
-            // Get data from the server
-            getCars()
-        }
-        else{
-            binding.carsRecycleView.layoutManager = GridLayoutManager(requireActivity(),resources.getInteger(R.integer.nbcol))
-            binding.carsRecycleView.adapter = CarAdapter(requireActivity(),carModel.cars)
-            val itemDecor = DividerItemDecoration(requireActivity(),1)
-            binding.carsRecycleView.addItemDecoration(itemDecor)
-        }
+
+        binding.progressBar.visibility = View.VISIBLE
+        // Get data from the server
+        getCars()
+
 
     }
 

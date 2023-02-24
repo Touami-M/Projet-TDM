@@ -89,5 +89,5 @@
         android:layout_marginEnd="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/save_icon" />
+        app:srcCompat="@drawable/ic_save" />
 </androidx.constraintlayout.widget.ConstraintLayout>

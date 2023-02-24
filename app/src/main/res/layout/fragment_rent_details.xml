@@ -193,13 +193,25 @@
                 android:id="@+id/codePinView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="250dp"
+                android:layout_marginStart="200dp"
                 android:layout_marginTop="25dp"
                 android:fontFamily="@font/inter_bold"
                 android:gravity="right"
                 android:text="1234"
                 android:textColor="@color/blue"
                 android:textSize="22sp" />
+
+            <Button
+                android:id="@+id/lock"
+                style="@style/Theme.RENTGO"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="280dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:backgroundTint="@color/blue"
+                android:text="Lock"
+                android:textColor="@color/white" />
 
         </androidx.coordinatorlayout.widget.CoordinatorLayout>
     </RelativeLayout>

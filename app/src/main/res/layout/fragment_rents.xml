@@ -60,6 +60,32 @@
             app:layout_constraintTop_toBottomOf="@+id/textView"
             tools:ignore="TextContrastCheck" />
 
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:progressTint="@color/blue"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/noRents_textvie"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="236dp"
+            android:fontFamily="@font/inter_medium"
+            android:text="You can now rents for now"
+            android:textColor="@color/grey"
+            android:textSize="18sp"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editMobileNo" />
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rentsRecycleView"
             android:layout_width="360dp"
@@ -70,6 +96,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/editMobileNo" />
+
+
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,8 +1,14 @@
 package com.example.rentgo
 
+import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
 import android.view.View
+import androidx.core.content.edit
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.NavDestination
@@ -31,36 +37,30 @@ class MainActivity : AppCompatActivity() {
                 binding.navBottom.visibility = View.VISIBLE
             }
         }
-
-        /*binding.navBottom.setOnItemSelectedListener {
-            when (it.itemId) {
-                R.id.home_fragment -> {
-                    loadFragment(HomeFragment())
-                    true
-                }
-                R.id.savedFragment -> {
-                    loadFragment(SavedFragment())
-                    true
-                }
-                R.id.rentsFragment -> {
-                    loadFragment(RentsFragment())
-                    true
-                }
-                R.id.profileFragment -> {
-                    loadFragment(ProfileFragment())
-                    true
-                }
-                else -> {
-                    loadFragment(HomeFragment())
-                    true
-                }
-            }
-        }*/
     }
-    /*private  fun loadFragment(fragment: Fragment){
-        val transaction = supportFragmentManager.beginTransaction()
-        transaction.replace(R.id.home_fragment,fragment)
-        transaction.commit()
+
+    /*override fun onSupportNavigateUp() = navController.navigateUp() || super.onSupportNavigateUp()
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        val inflater: MenuInflater = menuInflater
+        inflater.inflate(R.menu.overflow_menu, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+
+        when (item.itemId) {
+            R.id.logout-> {
+                val intent = Intent(this@MainActivity,LoginSignUpActivity::class.java)
+                this.startActivity(intent)
+                val pref = getSharedPreferences("users", Context.MODE_PRIVATE)
+                pref.edit { putBoolean("connected", false)}
+                finish()
+            }
+
+        }
+        return super.onOptionsItemSelected(item)
+
     }*/
 
 }

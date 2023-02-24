@@ -7,6 +7,7 @@ import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
+import android.graphics.Typeface
 import android.os.Bundle
 import android.provider.MediaStore
 import android.text.method.HideReturnsTransformationMethod
@@ -69,9 +70,6 @@ class SignupFrag : Fragment() {
 
         var cpt = 0
         binding.eyesignup.setOnClickListener{
-
-            //val eye = view.findViewById<View>(R.id.eyelogin)
-            //val pwd = view.findViewById<EditText>(R.id.passwd)
             if(cpt==0)
             {
                 cpt = 1
@@ -92,17 +90,19 @@ class SignupFrag : Fragment() {
                 imageBitmap = intent.extras?.get("data") as Bitmap
                 //val resizedBitmap = Bitmap.createScaledBitmap(imageBitmap, 300, 300, true)
                 binding.imageView.setImageBitmap(imageBitmap)
+                binding.uploadimageView.text = "Driving License uploaded"
+                binding.uploadimageView.setTypeface(null, Typeface.BOLD)
             }
         }
 
         binding.uploadimageView.setOnClickListener {
             if (ContextCompat.checkSelfPermission(requireActivity(), Manifest.permission.CAMERA)== PackageManager.PERMISSION_GRANTED)  {
                 openCameraIntent()
+
             }
             else {
                 checkPermission()
             }
-
         }
 
         binding.button2.setOnClickListener {

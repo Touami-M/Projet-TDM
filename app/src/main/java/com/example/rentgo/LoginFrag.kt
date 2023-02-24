@@ -16,8 +16,6 @@ import androidx.navigation.findNavController
 import com.example.rentgo.databinding.FragmentLoginBinding
 import kotlinx.coroutines.*
 import okhttp3.MediaType.*
-import okhttp3.MultipartBody
-import okhttp3.RequestBody
 import okhttp3.RequestBody.*
 
 
@@ -60,7 +58,10 @@ class LoginFrag : Fragment() {
 
         }
 
-        binding.button2.setOnClickListener {
+        val pref = requireActivity().getSharedPreferences("users",Context.MODE_PRIVATE)
+        val con = pref.getBoolean("connected", false)
+
+        if(!con) binding.button2.setOnClickListener {
             val telephone = binding.editTextPhone.text.toString().toInt()
             val password = binding.passwd.text.toString()
             val progresbar = binding.progressBar
@@ -69,6 +70,11 @@ class LoginFrag : Fragment() {
             data.put("telephone", telephone.toString())
             data.put("password", password)
             login(data)
+        }
+        else{
+            val intent = Intent(requireActivity(), MainActivity::class.java)
+            startActivity(intent)
+            requireActivity().finish()
         }
 
 
@@ -82,8 +88,7 @@ class LoginFrag : Fragment() {
                 if (response.isSuccessful) {
                     val user = response.body()
                     if (user != null) {
-                        val pref =
-                            requireActivity().getSharedPreferences("users", Context.MODE_PRIVATE)
+                        val pref = requireActivity().getSharedPreferences("users", Context.MODE_PRIVATE)
                         pref.edit {
                             putInt("idUser", user.telephone)
                             putBoolean("connected", true)

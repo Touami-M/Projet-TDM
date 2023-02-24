@@ -1,11 +1,14 @@
 package com.example.rentgo
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import androidx.constraintlayout.widget.ConstraintLayout
+import android.widget.Toast
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
@@ -13,7 +16,6 @@ import com.example.rentgo.databinding.FragmentCarDetailsBinding
 import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType
 import com.smarteist.autoimageslider.SliderAnimations
 import com.smarteist.autoimageslider.SliderView
-import java.util.List
 
 
 class CarDetailsFragment : Fragment() {
@@ -41,20 +43,23 @@ class CarDetailsFragment : Fragment() {
             imageUrl = ArrayList(listOf(car.photo1,car.photo2,car.photo3))
 
             binding.apply {
-                marque.text = car.marque
+                val marque_model = car.marque +" "+car.model
+                marque.text = marque_model
                 detailsView.text = car.description
-                if(car.dispo==1)
+                if(car.dispo==1) {
                     availability.text = "Available"
-                else {
+                    imageView6.setImageResource(R.drawable.available_true)
+                }else {
                     availability.text = "Not Available"
+                    imageView6.setImageResource(R.drawable.available_false)
                 }
                 priceView.text = car.prix+"/Day"
-                cardView1.getViewById(colorValueView).text = car.couleur
-                cardView2.getViewById(powerValueView).text = car.puissance
-                cardView3.getViewById(yearValueView).text = car.année.toString()
-                cardView4.getViewById(seatsValueView).text = car.seats.toString()
-                cardView5.getViewById(classValueView).text = car.classe
-                cardView6.getViewById(boxValueView).text = car.gearbox
+                getViewById(colorValueView).text = car.couleur
+                getViewById(powerValueView).text = car.puissance
+                getViewById(yearValueView).text = car.année.toString()
+                getViewById(seatsValueView).text = car.seats.toString()
+                getViewById(classValueView).text = car.classe
+                getViewById(boxValueView).text = car.gearbox
             }
             sliderView = binding.slider
             val sliderAdapter = SliderAdapter(this.imageUrl)
@@ -63,22 +68,39 @@ class CarDetailsFragment : Fragment() {
             sliderView.setIndicatorAnimation(IndicatorAnimationType.WORM)
             sliderView.setSliderTransformAnimation(SliderAnimations.DEPTHTRANSFORMATION)
             sliderView.startAutoCycle()
+
+
+            binding.locationButtonView.setOnClickListener{
+                var latitude = carModel.cars[position].lat
+                var longitude = carModel.cars[position].longitude
+                val place = Uri.parse("geo:$latitude,$longitude?q=$latitude,$longitude&z=10")
+                val intent = Intent(Intent.ACTION_VIEW, place)
+                intent.setPackage("com.google.android.apps.maps");
+                startActivity(intent)
+            }
         }
 
 
 
         binding.backButtonView.setOnClickListener { view: View ->
-            view.findNavController().navigate(com.example.rentgo.R.id.action_carDetailsFragment_to_homeFragment)
+            view.findNavController().navigate(R.id.action_carDetailsFragment_to_homeFragment)
         }
 
         binding.extendedFab.setOnClickListener { view: View ->
-            view.findNavController().navigate((com.example.rentgo.R.id.action_carDetailsFragment_to_bookingFragment))
+            if (carModel.cars[position!!].dispo==1){
+                val data = bundleOf("idcar" to carModel.cars[position!!].id)
+                view.findNavController().navigate(R.id.action_carDetailsFragment_to_bookingFragment,data)
+            }
+            else{
+                Toast.makeText(context,"This car isn't available, you can not rent it!!",Toast.LENGTH_LONG).show()
+                binding.extendedFab.isEnabled  = false
+            }
         }
 
     }
 
 }
 
-private fun ConstraintLayout.getViewById(textView: TextView): TextView {
+private fun getViewById(textView: TextView): TextView {
     return textView
 }

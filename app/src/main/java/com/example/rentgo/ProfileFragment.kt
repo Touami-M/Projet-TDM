@@ -25,13 +25,14 @@ class ProfileFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        binding.logoutButton.setOnClickListener {
-            Toast.makeText(context,"CLICKED",Toast.LENGTH_LONG).show()
-            val intent = Intent(context, LoginSignUpActivity::class.java)
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
-            startActivity(intent)
-        }
         super.onViewCreated(view, savedInstanceState)
+        binding.logout.setOnClickListener {
+            val intent = Intent(context,LoginSignUpActivity::class.java)
+            this.startActivity(intent)
+            val pref = requireActivity().getSharedPreferences("users", Context.MODE_PRIVATE)
+            pref.edit { putBoolean("connected", false)}
+            requireActivity().finish()
+        }
     }
 
 }

@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.core.os.bundleOf
 import androidx.navigation.*
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.rentgo.databinding.RentLayoutBinding
 
 class RentAdapter(val context: Context, var rents:List<Rent>):
@@ -21,8 +22,10 @@ class RentAdapter(val context: Context, var rents:List<Rent>):
 
 
         holder.binding.apply {
-            rentImage.setImageResource(rents.get(position).photo_list)
-            marque.text = rents[position].marque + rents[position].model
+            Glide.with(context).load(url+rents[position].photo_list).into(rentImage)
+            marque.text = rents[position].marque +" "+ rents[position].model
+            totalPrice.text = rents[position].cost.toString() +" DA"
+
         }
         holder.itemView.setOnClickListener { view: View ->
             val data = bundleOf("position" to position)

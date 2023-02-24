@@ -4,7 +4,7 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.ViewModel
 
-class CarModel: ViewModel() {
+class RentModel : ViewModel() {
 
-    var cars = listOf<Car>()
+    var rents = listOf<Rent>()
 }

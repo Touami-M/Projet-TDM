@@ -4,33 +4,30 @@
 
 
     <item
-        android:id="@+id/mainFragment"
+        android:id="@+id/homeFragment"
         android:enabled="true"
         android:icon="@drawable/ic_round_home"
         android:title="Home"
         android:visible="true" />
 
     <item
-        android:id="@+id/mainFragment"
+        android:id="@+id/savedFragment"
         android:enabled="true"
         android:icon="@drawable/ic_save"
         android:title="Saved"
-        android:visible="true"
-        tools:ignore="DuplicateIds" />
+        android:visible="true" />
 
     <item
-        android:id="@+id/mainFragment"
+        android:id="@+id/rentsFragment"
         android:enabled="true"
         android:icon="@drawable/ic_rents"
         android:title="Rents"
-        android:visible="true"
-        tools:ignore="DuplicateIds" />
+        android:visible="true"/>
 
     <item
-        android:id="@+id/mainFragment"
+        android:id="@+id/profileFragment"
         android:enabled="true"
         android:icon="@drawable/ic_user_profile"
         android:title="Profile"
-        android:visible="true"
-        tools:ignore="DuplicateIds" />
+        android:visible="true" />
 </menu>

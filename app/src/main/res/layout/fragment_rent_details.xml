@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/menu_backgroung_grey"
+    tools:context=".RentDetailsFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:backgroundTint="@color/menu_backgroung_grey">
+
+        <com.smarteist.autoimageslider.SliderView
+            android:id="@+id/slider"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:sliderAnimationDuration="600"
+            app:sliderAutoCycleDirection="back_and_forth"
+            app:sliderIndicatorAnimationDuration="600"
+            app:sliderIndicatorEnabled="true"
+            app:sliderIndicatorGravity="center_horizontal|bottom"
+            app:sliderIndicatorMargin="15dp"
+            app:sliderIndicatorOrientation="horizontal"
+            app:sliderIndicatorPadding="3dp"
+            app:sliderIndicatorRadius="2dp"
+            app:sliderIndicatorSelectedColor="@color/blue"
+            app:sliderIndicatorUnselectedColor="@color/grey"
+            app:sliderScrollTimeInSec="1">
+
+            <ImageButton
+                android:id="@+id/backButtonView"
+                android:layout_width="48dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:background="@null"
+                android:contentDescription="back button"
+                android:src="@drawable/back_button_icon" />
+
+        </com.smarteist.autoimageslider.SliderView>
+
+        <TextView
+            android:id="@+id/marque"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/inter_bold"
+            android:text="Maruti Alto"
+            android:textColor="@color/black"
+            android:textSize="32sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/slider" />
+
+        <ImageButton
+            android:id="@+id/locationButtonView"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="-20dp"
+            android:layout_marginEnd="25dp"
+            android:background="@null"
+            android:contentDescription="location button"
+            android:src="@drawable/location_icon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/slider" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="24dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="25dp"
+            android:contentDescription="save icon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/save_icon" />
+
+        <TextView
+            android:id="@+id/textView14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/inter_medium"
+            android:text="Start Time"
+            android:textColor="@color/black"
+            android:textSize="17sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/marque" />
+
+        <TextView
+            android:id="@+id/startTimetextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/layout_bg"
+            android:fontFamily="@font/inter_regular"
+            android:padding="10dp"
+            android:text="TextView"
+            android:textColor="@color/grey"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView14" />
+
+        <TextView
+            android:id="@+id/endTimetextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/layout_bg"
+            android:fontFamily="@font/inter_regular"
+            android:padding="10dp"
+            android:text="TextView"
+            android:textColor="@color/grey"
+            android:textSize="15sp"
+            app:layout_constraintStart_toEndOf="@+id/startTimetextView"
+            app:layout_constraintTop_toBottomOf="@+id/textView14" />
+
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/inter_medium"
+            android:text="End Time"
+            android:textColor="@color/black"
+            android:textSize="17sp"
+            app:layout_constraintStart_toStartOf="@+id/endTimetextView"
+            app:layout_constraintTop_toBottomOf="@+id/marque" />
+
+        <TextView
+            android:id="@+id/textView17"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/inter_medium"
+            android:text="Cost"
+            android:textColor="@color/black"
+            android:textSize="17sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/startTimetextView" />
+
+        <TextView
+            android:id="@+id/costView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/inter_bold"
+            android:text="40000 DA"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView17" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/backgroung_grey2"
+            android:elevation="10dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="0dp">
+
+            <TextView
+                android:id="@+id/totalPriceView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="25dp"
+                android:fontFamily="@font/inter_bold"
+                android:gravity="center"
+                android:text="Pin code"
+                android:textColor="@color/black"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/codePinView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="200dp"
+                android:layout_marginTop="25dp"
+                android:fontFamily="@font/inter_bold"
+                android:gravity="right"
+                android:text="1234"
+                android:textColor="@color/blue"
+                android:textSize="22sp" />
+
+            <Button
+                android:id="@+id/lock"
+                style="@style/Theme.RENTGO"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="280dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:backgroundTint="@color/blue"
+                android:text="Lock"
+                android:textColor="@color/white" />
+
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+    </RelativeLayout>
+
+</FrameLayout>

@@ -14,7 +14,7 @@
         tools:ignore="UselessParent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/linearLayout"
+            android:id="@+id/container"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/menu_backgroung_grey">
@@ -126,16 +126,305 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/availability" />
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/specificationRecycleView"
-                android:layout_width="360dp"
-                android:layout_height="wrap_content"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cardView1"
+                android:layout_width="160dp"
+                android:layout_height="60dp"
                 android:layout_marginStart="25dp"
                 android:layout_marginTop="10dp"
-                android:layout_marginEnd="25dp"
-                app:layout_constraintEnd_toEndOf="parent"
+                android:background="@drawable/layout_bg"
+                android:paddingEnd="20dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/specification_textview" />
+                app:layout_constraintTop_toBottomOf="@+id/specification_textview">
+
+                <ImageView
+                    android:id="@+id/color_icon_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/color_icon" />
+
+                <TextView
+                    android:id="@+id/color_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/inter_medium"
+                    android:text="Color"
+                    android:textColor="@color/blue"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toEndOf="@+id/color_icon_view"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/color_value_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/inter_bold"
+                    android:text="red"
+                    android:textColor="@color/black"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toEndOf="@+id/color_icon_view"
+                    app:layout_constraintTop_toBottomOf="@+id/color_name" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cardView2"
+                android:layout_width="160dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="25dp"
+                android:background="@drawable/layout_bg"
+                android:paddingEnd="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/specification_textview">
+
+                <ImageView
+                    android:id="@+id/power_icon_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/motor_icon" />
+
+                <TextView
+                    android:id="@+id/power_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/inter_medium"
+                    android:text="HorsePower"
+                    android:textColor="@color/blue"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toEndOf="@+id/power_icon_view"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/power_value_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/inter_bold"
+                    android:text="V4"
+                    android:textColor="@color/black"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toEndOf="@+id/power_icon_view"
+                    app:layout_constraintTop_toBottomOf="@+id/power_name" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cardView5"
+                android:layout_width="160dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/layout_bg"
+                android:paddingEnd="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardView3">
+
+                <ImageView
+                    android:id="@+id/class_icon_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/speed_icon" />
+
+                <TextView
+                    android:id="@+id/class_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/inter_medium"
+                    android:text="Class"
+                    android:textColor="@color/blue"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toEndOf="@+id/class_icon_view"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/class_value_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/inter_bold"
+                    android:text="Sport"
+                    android:textColor="@color/black"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toEndOf="@+id/class_icon_view"
+                    app:layout_constraintTop_toBottomOf="@+id/class_name" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cardView6"
+                android:layout_width="160dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="25dp"
+                android:background="@drawable/layout_bg"
+                android:paddingEnd="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardView4">
+
+                <ImageView
+                    android:id="@+id/box_icon_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/gearbox_icon" />
+
+                <TextView
+                    android:id="@+id/box_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/inter_medium"
+                    android:text="GearBox"
+                    android:textColor="@color/blue"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toEndOf="@+id/box_icon_view"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/box_value_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/inter_bold"
+                    android:text="Manual"
+                    android:textColor="@color/black"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toEndOf="@+id/box_icon_view"
+                    app:layout_constraintTop_toBottomOf="@+id/box_name" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cardView3"
+                android:layout_width="160dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/layout_bg"
+                android:paddingEnd="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardView1">
+
+                <ImageView
+                    android:id="@+id/year_icon_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/year_icon" />
+
+                <TextView
+                    android:id="@+id/year_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/inter_medium"
+                    android:text="Year"
+                    android:textColor="@color/blue"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toEndOf="@+id/year_icon_view"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/year_value_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/inter_bold"
+                    android:text="2011"
+                    android:textColor="@color/black"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toEndOf="@+id/year_icon_view"
+                    app:layout_constraintTop_toBottomOf="@+id/year_name" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cardView4"
+                android:layout_width="160dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="25dp"
+                android:background="@drawable/layout_bg"
+                android:paddingEnd="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardView2">
+
+                <ImageView
+                    android:id="@+id/seats_icon_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/seat_icon" />
+
+                <TextView
+                    android:id="@+id/seats_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/inter_medium"
+                    android:text="Seats"
+                    android:textColor="@color/blue"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toEndOf="@+id/seats_icon_view"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/seats_value_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/inter_bold"
+                    android:text="4 seaters"
+                    android:textColor="@color/black"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toEndOf="@+id/seats_icon_view"
+                    app:layout_constraintTop_toBottomOf="@+id/seats_name" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
             <TextView
                 android:id="@+id/textView3"
@@ -148,20 +437,22 @@
                 android:textColor="@color/black"
                 android:textSize="22sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/specificationRecycleView" />
+                app:layout_constraintTop_toBottomOf="@+id/cardView5" />
 
             <TextView
                 android:id="@+id/detailsView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="25dp"
+                android:layout_marginLeft="25dp"
                 android:layout_marginTop="10dp"
-                android:layout_marginEnd="25dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginBottom="100dp"
                 android:paddingStart="25dp"
                 android:paddingEnd="10dp"
                 android:text="TextView"
                 android:textColor="@color/grey"
                 android:textSize="15sp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView3" />

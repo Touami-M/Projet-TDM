@@ -1,8 +1,14 @@
 package com.example.rentgo
 
+import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
 import android.view.View
+import androidx.core.content.edit
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.NavDestination
@@ -17,7 +23,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
+        this.binding = ActivityMainBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
         val navHostFragment = supportFragmentManager. findFragmentById(R.id.navHost) as NavHostFragment
@@ -25,38 +31,36 @@ class MainActivity : AppCompatActivity() {
         NavigationUI.setupWithNavController(binding.navBottom,navController)
 
         navController.addOnDestinationChangedListener { _, nd: NavDestination, _ ->
-            if (nd.id == R.id.carDetailsFragment) {
+            if (nd.id == R.id.carDetailsFragment  || nd.id == R.id.bookingFragment || nd.id == R.id.rentDetailsFragment) {
                 binding.navBottom.visibility = View.GONE
             } else {
                 binding.navBottom.visibility = View.VISIBLE
             }
         }
+    }
 
-        binding.navBottom.setOnItemSelectedListener {
-            when (it.itemId) {
-                R.id.home_fragment -> {
-                    loadFragment(HomeFragment())
-                    true
-                }
-                R.id.home_fragment -> {
-                    loadFragment(HomeFragment())
-                    true
-                }
-                R.id.home_fragment -> {
-                    loadFragment(HomeFragment())
-                    true
-                }
-                else -> {
-                    loadFragment(HomeFragment())
-                    true
-                }
+    /*override fun onSupportNavigateUp() = navController.navigateUp() || super.onSupportNavigateUp()
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        val inflater: MenuInflater = menuInflater
+        inflater.inflate(R.menu.overflow_menu, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+
+        when (item.itemId) {
+            R.id.logout-> {
+                val intent = Intent(this@MainActivity,LoginSignUpActivity::class.java)
+                this.startActivity(intent)
+                val pref = getSharedPreferences("users", Context.MODE_PRIVATE)
+                pref.edit { putBoolean("connected", false)}
+                finish()
             }
+
         }
-    }
-    private  fun loadFragment(fragment: Fragment){
-        val transaction = supportFragmentManager.beginTransaction()
-        transaction.replace(R.id.home_fragment,fragment)
-        transaction.commit()
-    }
+        return super.onOptionsItemSelected(item)
+
+    }*/
 
 }

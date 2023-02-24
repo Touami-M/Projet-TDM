@@ -63,11 +63,10 @@ class CarAdapter(val context: Context, var cars:List<Car>):
                     val response = response.body()
                     if(response!=null) {
                         holder.binding.imageView.setImageResource(R.drawable.ic_saved)
-                        Toast.makeText(context,"${cars[id].marque} est ajouter de la liste des saved", Toast.LENGTH_SHORT).show()
                     }
                 }
                 else {
-                    Toast.makeText(context,"Une erreur s'est produite", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(context,"An error has occurred", Toast.LENGTH_SHORT).show()
                 }
 
             }

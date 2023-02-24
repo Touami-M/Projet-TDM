@@ -10,10 +10,6 @@ interface Endpoint {
     @POST("getuserhashmap")
     suspend fun getUserMap(@FieldMap data: HashMap<String,String>): Response<User?>
 
-    @Multipart
-    @POST("getuser")
-    suspend fun getUser(@Part data: MultipartBody.Part): Response<User?>
-
     @GET("getcars")
     suspend fun getCars():Response<List<Car>>
 

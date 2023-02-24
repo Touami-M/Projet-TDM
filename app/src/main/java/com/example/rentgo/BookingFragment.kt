@@ -157,10 +157,10 @@ class BookingFragment : Fragment() {
                         view?.findNavController()?.navigate(R.id.action_bookingFragment_to_rentsFragment)
                     }
                     else {
-                        Toast.makeText(requireActivity(),"Info erronés, refaire",Toast.LENGTH_SHORT).show()
+                        Toast.makeText(requireActivity(),"Wrong information, retry",Toast.LENGTH_SHORT).show()
                     }
                 } else {
-                    Toast.makeText(requireActivity(), "Une erreur s'est produite", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(requireActivity(), "An error has occurred", Toast.LENGTH_SHORT).show()
                 }
             }
         }
@@ -180,7 +180,7 @@ class BookingFragment : Fragment() {
                     }
                 }
                 else {
-                    Toast.makeText(requireActivity(),"Une erreur s'est produite",Toast.LENGTH_SHORT).show()
+                    Toast.makeText(requireActivity(),"An error has occurred",Toast.LENGTH_SHORT).show()
                 }
             }
         }    }

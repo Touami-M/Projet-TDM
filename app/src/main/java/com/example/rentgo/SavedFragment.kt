@@ -60,7 +60,7 @@ class SavedFragment : Fragment() {
                     }
                 }
                 else {
-                    Toast.makeText(requireActivity(),"Une erreur s'est produite", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(requireActivity(),"An error has occurred", Toast.LENGTH_SHORT).show()
                 }
 
             }

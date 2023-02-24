@@ -1,15 +1,8 @@
 package com.example.rentgo
 
-import android.content.Context
-import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuInflater
-import android.view.MenuItem
 import android.view.View
-import androidx.core.content.edit
-import androidx.fragment.app.Fragment
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.NavDestination
 import androidx.navigation.fragment.NavHostFragment
@@ -57,7 +50,6 @@ class MainActivity : AppCompatActivity() {
                 pref.edit { putBoolean("connected", false)}
                 finish()
             }
-
         }
         return super.onOptionsItemSelected(item)
 

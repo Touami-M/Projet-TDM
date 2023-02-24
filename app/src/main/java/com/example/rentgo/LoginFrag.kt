@@ -99,14 +99,14 @@ class LoginFrag : Fragment() {
                     } else {
                         Toast.makeText(
                             requireActivity(),
-                            "Email ou Mot de passe erronés ",
+                            "Wrong email or password",
                             Toast.LENGTH_SHORT
                         ).show()
                     }
                 } else {
                     Toast.makeText(
                         requireActivity(),
-                        "Une erreur s'est produite",
+                        "An error has occurred",
                         Toast.LENGTH_SHORT
                     ).show()
                 }

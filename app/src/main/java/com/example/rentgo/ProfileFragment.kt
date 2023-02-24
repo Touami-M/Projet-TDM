@@ -3,8 +3,10 @@ package com.example.rentgo
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.view.*
-import android.widget.Toast
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.Button
 import androidx.core.content.edit
 import androidx.fragment.app.Fragment
 import com.example.rentgo.databinding.FragmentProfileBinding
@@ -26,7 +28,8 @@ class ProfileFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.logout.setOnClickListener {
+        val logoutButton = view.findViewById<Button>(R.id.logoutButton)
+        logoutButton.setOnClickListener {
             val intent = Intent(context,LoginSignUpActivity::class.java)
             this.startActivity(intent)
             val pref = requireActivity().getSharedPreferences("users", Context.MODE_PRIVATE)

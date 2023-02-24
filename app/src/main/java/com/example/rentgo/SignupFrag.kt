@@ -160,7 +160,7 @@ class SignupFrag : Fragment() {
                     }
                 }
                 else {
-                    Toast.makeText(requireActivity(),"Une erreur s'est produite",Toast.LENGTH_SHORT).show()
+                    Toast.makeText(requireActivity(),"An error has occurred",Toast.LENGTH_SHORT).show()
                 }
             }
         }
@@ -203,11 +203,11 @@ class SignupFrag : Fragment() {
                         login(phone_pass)
                     }
                     else {
-                        Toast.makeText(requireActivity(),"Info erronés, refaire",Toast.LENGTH_SHORT).show()
+                        Toast.makeText(requireActivity(),"Wrong information, retry",Toast.LENGTH_SHORT).show()
                     }
                 }
                 else {
-                    Toast.makeText(requireActivity(),"Une erreur s'est produite",Toast.LENGTH_SHORT).show()
+                    Toast.makeText(requireActivity(),"An error has occurred",Toast.LENGTH_SHORT).show()
                 }
             }
         }
@@ -231,11 +231,11 @@ class SignupFrag : Fragment() {
                         requireActivity().finish()
                     }
                     else {
-                        Toast.makeText(requireActivity(),"Email ou Mot de passe erronés ",Toast.LENGTH_SHORT).show()
+                        Toast.makeText(requireActivity(),"Wrong email or password",Toast.LENGTH_SHORT).show()
                     }
                 }
                 else {
-                    Toast.makeText(requireActivity(),"Une erreur s'est produite",Toast.LENGTH_SHORT).show()
+                    Toast.makeText(requireActivity(),"An error has occurred",Toast.LENGTH_SHORT).show()
                 }
             }
         }

@@ -79,6 +79,8 @@ class RentDetailsFragment : Fragment() {
             view.findNavController().navigate(R.id.action_rentDetailsFragment_to_rentsFragment)
         }
 
+        //Partie bluetooth qui n'a pas marche mais on a essaie
+
         /*val  bluetooth =   Bluetooth(context)
         bluetooth.turnOnWithPermission(requireActivity())
 
